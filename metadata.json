@@ -1,0 +1,6 @@
+{
+  "name": "온기화실 회상미술 연구원",
+  "description": "파스텔 연보라 감성 디지털 팜플렛으로 만나는 회상미술 지도사 1·2급 민간자격 온라인 교육, PDF 자격증 발급·진위 조회 및 강사 매칭 플랫폼",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

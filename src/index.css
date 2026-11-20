@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Noto Serif KR", Georgia, serif;
+  --font-sans: "Pretendard", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  :root {
+    --bg-canvas: #faf6fc;
+    --bg-warm-cream: #fdf8f5;
+    --surface-card: #ffffff;
+    --surface-lilac: #f3ecf8;
+    --border-hairline: #e4dcee;
+    --ink-primary: #2b1f33;
+    --ink-secondary: #5c4e68;
+    --ink-muted: #7e6f8a;
+    --accent-plum: #5b3765;
+    --accent-plum-hover: #472950;
+    --accent-rose: #9f5a6a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: var(--ink-primary);
+    background-color: var(--bg-canvas);
+    font-family: var(--font-sans);
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(223, 206, 240, 0.42) 0%, transparent 42%),
+      radial-gradient(circle at 88% 16%, rgba(246, 224, 214, 0.38) 0%, transparent 40%),
+      radial-gradient(circle at 50% 85%, rgba(230, 216, 244, 0.32) 0%, transparent 50%),
+      linear-gradient(170deg, #fbf7fe 0%, #f6effa 48%, #fdf8f5 100%);
+    color: var(--ink-primary);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 8mm;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  body[data-print-mode="pamphlet"] .print-certificate-block {
+    display: none !important;
+  }
+  body[data-print-mode="certificate"] .print-pamphlet-sheet {
+    display: none !important;
+  }
+  .print-pamphlet-sheet {
+    box-shadow: none !important;
+    border-color: #d4c4e3 !important;
+    padding: 12px !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+  .print-pamphlet-sheet .pamphlet-grid-gap {
+    gap: 10px !important;
+  }
+  .print-pamphlet-sheet .pamphlet-hero-img {
+    max-height: 145px !important;
+  }
+  .print-pamphlet-sheet .pamphlet-art-img {
+    max-height: 105px !important;
+  }
+  .print-only-sheet {
+    box-shadow: none !important;
+    border-color: #5b3765 !important;
+    margin: 0 auto !important;
+    page-break-inside: avoid;
+  }
+}
